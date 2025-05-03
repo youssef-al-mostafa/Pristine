@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\PermissionsEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
@@ -13,21 +14,21 @@ class RoleSeeder extends Seeder
     {
         $roles = [
             'master-admin' => [
-                'Can Enter',
-                'Data Entry',
-                'Manage Editors',
-                'Manage Admins',
-                'Give Permissions',
+                PermissionsEnum::CAN_ENTER->value,
+                PermissionsEnum::Data_Entry->value,
+                PermissionsEnum::Manage_Editors->value,
+                PermissionsEnum::Manage_Admins->value,
+                PermissionsEnum::Give_Permissions->value,
             ],
             'admin' => [
-                'Can Enter',
-                'Data Entry',
-                'Manage Editors',
-                'Give Permissions',
+                PermissionsEnum::CAN_ENTER->value,
+                PermissionsEnum::Data_Entry->value,
+                PermissionsEnum::Manage_Editors->value,
+                PermissionsEnum::Give_Permissions->value,
             ],
             'editor' => [
-                'Can Enter',
-                'Data Entry',
+                PermissionsEnum::CAN_ENTER->value,
+                PermissionsEnum::Data_Entry->value,
             ],
         ];
 
