@@ -18,5 +18,6 @@ class CreateAdmin extends CreateRecord
     protected function afterCreate(): void
     {
         $this->record->assignRole(RolesEnum::ADMIN->value);
+        $this->record->sendEmailVerificationNotification();
     }
 }
